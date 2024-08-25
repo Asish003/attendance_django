@@ -4,6 +4,9 @@ let uploadContainer = document.getElementById('uploadContainer');
 let uploadInput = document.getElementById('uploadInput');
 let uploadButton = document.getElementById('uploadButton');
 let photoCanvas = document.getElementById('photoCanvas');
+let capturedPhotoContainer = document.getElementById('capturedPhotoContainer');
+let capturedPhoto = document.getElementById('capturedPhoto');
+
 
 function requestCameraAccess() {
     navigator.mediaDevices.getUserMedia({
@@ -64,6 +67,7 @@ function chooseOption(option) {
         uploadContainer.style.display = 'block';
         camera.style.display = 'none';
         captureButton.style.display = 'none';
+        capturedPhotoContainer.style.display = 'none';
     }
 }
 
@@ -74,6 +78,8 @@ function capturePhoto() {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     const dataURL = canvas.toDataURL('image/png');
     uploadImage(dataURL);
+    capturedPhoto.src = dataURL;
+    capturedPhotoContainer.style.display = 'block';
 }
 
 function uploadPhoto() {

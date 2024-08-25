@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="attendance.css">
+    <link rel="stylesheet" href="attendance.css"> 
 </head>
 
 <body>
@@ -24,6 +24,10 @@
         <video id="camera" width="320" height="240" autoplay></video>
         <button id="captureButton" onclick="capturePhoto()">Capture Photo</button>
         <canvas id="photoCanvas" width="320" height="240" style="display:none;"></canvas>
+    </div>
+    <div id="capturedPhotoContainer" style="display:none;">
+        <h2>Captured Photo:</h2>
+        <img id="capturedPhoto" src="" alt="Captured Photo" style="border: 2px solid #000; border-radius: 5px;"/>
     </div>
 
     <!-- Uploading Photo -->
