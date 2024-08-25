@@ -54,13 +54,11 @@ function fetchAttendanceRecords() {
 
 function chooseOption(option) {
     if (option === 'live') {
-        // Show camera access button
         camera.style.display = 'block';
         captureButton.style.display = 'inline-block';
         uploadContainer.style.display = 'none';
         requestCameraAccess();
     } else if (option === 'upload') {
-        // Show upload input and button
         uploadInput.style.display = 'block';
         uploadButton.style.display = 'block';
         uploadContainer.style.display = 'block';
