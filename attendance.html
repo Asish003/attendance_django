@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="attendance.css">
+</head>
+
+<body>
+    <h1>Automatic Attendance Register</h1>
+
+    <!-- Choosing Method -->
+    <div id="optionsContainer">
+        <h2>Choose a method:</h2>
+        <input type="radio" id="livePhotoOption" name="photoOption" value="live" onclick="chooseOption('live')">
+        <label for="livePhotoOption">Take a Live Photo</label><br>
+        <input type="radio" id="uploadPhotoOption" name="photoOption" value="upload" onclick="chooseOption('upload')">
+        <label for="uploadPhotoOption">Upload a Photo</label>
+    </div>
+
+    <!-- Realtime Camera -->
+    <div id="videoContainer">
+        <video id="camera" width="320" height="240" autoplay></video>
+        <button id="captureButton" onclick="capturePhoto()">Capture Photo</button>
+        <canvas id="photoCanvas" width="320" height="240" style="display:none;"></canvas>
+    </div>
+
+    <!-- Uploading Photo -->
+    <div id="uploadContainer">
+        <input type="file" id="uploadInput" accept="image/*" />
+        <button id="uploadButton" onclick="uploadPhoto()">Upload Photo</button>
+    </div>
+
+    <!-- Fetching Attendance Sheet-->
+    <div id="downloadContainer">
+        <h2>Fetch Attendance Records</h2>
+        <button onclick="fetchAttendanceRecords()">Download Excel File</button>
+    </div>
+    <script src="attendance.js"></script>
+</body>
+
+</html>
