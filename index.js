@@ -60,6 +60,7 @@ function chooseOption(option) {
         camera.style.display = 'block';
         captureButton.style.display = 'inline-block';
         uploadContainer.style.display = 'none';
+        uploadButton.style.display = 'block';
         requestCameraAccess();
     } else if (option === 'upload') {
         uploadInput.style.display = 'block';
